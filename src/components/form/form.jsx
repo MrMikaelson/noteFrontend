@@ -21,7 +21,7 @@ const Form=()=>{
             const data = new FormData();
             console.log(allData)
 
-            fetch('http://localhost:8000/notes',{
+            fetch('https://notebackend-omvi.onrender.com/notes',{
             method:"POST",
             headers:{
                 "Content-Type":"application/json",

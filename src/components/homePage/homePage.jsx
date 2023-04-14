@@ -18,7 +18,7 @@ const HomePage=()=>{
     const navigate = useNavigate();
 
     useEffect(()=>{
-        fetch("http://localhost:8000/notes").then((res)=> res.json()).then((data)=>{
+        fetch("https://notebackend-omvi.onrender.com/notes").then((res)=> res.json()).then((data)=>{
             setPost(data);
             setLoading(false);
             console.log(data);
@@ -32,7 +32,7 @@ const HomePage=()=>{
     const handleDelete=async(id)=>{
         // id.preventDefault()
         if(window.confirm("Are u sure want to delete!")){
-            await axios.delete(`http://localhost:8000/notes/${id}`);
+            await axios.delete(`https://notebackend-omvi.onrender.com/notes/${id}`);
             setPost(post.filter(post=>post._id !==id))
         }
     }

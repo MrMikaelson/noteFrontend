@@ -14,7 +14,7 @@ const EditPage = ({onClose}) => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:8000/notes/${id}`)
+      .get(`https://notebackend-omvi.onrender.com/notes/${id}`)
       .then((response) => {
         setTitle(response.data.title);
         setContent(response.data.content);
@@ -29,7 +29,7 @@ const EditPage = ({onClose}) => {
     event.preventDefault();
     const updatedNote = { title, content };
     await axios
-      .put(`http://localhost:8000/notes/${id}`, updatedNote)
+      .put(`https://notebackend-omvi.onrender.com/notes/${id}`, updatedNote)
       .then(() => {
         navigate("/home");
       })
